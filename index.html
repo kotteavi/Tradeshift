@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test page</title>
+</head>
+<body>
+<div id="testOutput">
+</div>
+</br>
+<div>
+    Side 1: <input type='text' id="sideOne"/>
+    Side 2: <input type='text' id="sideTwo"/>
+    Side 3: <input type='text' id="sideThree"/>
+    <button type="button" id="getType">Get Type</button>
+</div>
+</br>
+<div id="result">
+
+</div>
+
+<script type="text/javascript" src="./js/src/TriangleUtil.js"></script>
+<script type="text/javascript" src="./js/tests/TriangleUtil.js"></script>
+<script>
+
+    document.getElementById("getType").addEventListener("click", function () {
+
+        function getVal(inputId) {
+            return parseFloat(document.getElementById(inputId).value);
+        }
+
+        var type = TriangleUtil.getType(getVal("sideOne"), getVal("sideTwo"), getVal("sideThree"));
+        var result = document.getElementById("result");
+        result.innerHTML = type;
+    });
+
+</script>
+</body>
+</html>
